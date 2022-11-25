@@ -11,9 +11,9 @@ package model;
 public class Colaboradores extends Persona{
     
     private String puesto_trabajo;
-    private String tipo_empleado;
-    private int fecha_inicio;
-    private int fecha_fin;
+    private Tipo_Empleado tipo_empleado;
+    private String fecha_inicio;
+    private String fecha_fin;
 
     public String getPuesto_trabajo() {
         return puesto_trabajo;
@@ -23,31 +23,31 @@ public class Colaboradores extends Persona{
         this.puesto_trabajo = puesto_trabajo;
     }
 
-    public String getTipo_empleado() {
+    public Tipo_Empleado getTipo_empleado() {
         return tipo_empleado;
     }
 
-    public void setTipo_empleado(String tipo_empleado) {
+    public void setTipo_mpleado(Tipo_Empleado tipo_empleado) {
         this.tipo_empleado = tipo_empleado;
     }
 
-    public int getFecha_inicio() {
+    public String getFecha_inicio() {
         return fecha_inicio;
     }
 
-    public void setFecha_inicio(int fecha_inicio) {
+    public void setFecha_inicio(String fecha_inicio) {
         this.fecha_inicio = fecha_inicio;
     }
 
-    public int getFecha_fin() {
+    public String getFecha_fin() {
         return fecha_fin;
     }
 
-    public void setFecha_fin(int fecha_fin) {
+    public void setFecha_fin(String fecha_fin) {
         this.fecha_fin = fecha_fin;
     }
 
-    public Colaboradores(String cedula, String nombre, String telefono, String email, Estado estado_persona, String puesto_trabajo, String tipo_empleado, int fecha_inicio, int fecha_fin) {
+    public Colaboradores(String cedula, String nombre, String telefono, String email, Estado estado_persona, String puesto_trabajo, Tipo_Empleado tipo_empleado, String fecha_inicio, String fecha_fin) {
         super(cedula, nombre, telefono, email, estado_persona);
         this.puesto_trabajo = puesto_trabajo;
         this.estado = estado;

@@ -34,6 +34,11 @@ public class Visitante extends Persona{
         this.empresa = empresa;
         this.sanciones = sanciones;
     }
+
+    public Visitante(String cedula, String nombre, String telefono, String email, String sanciones) {
+        super(cedula, nombre, telefono, email);
+        this.sanciones = sanciones;
+    }
     
     
 }

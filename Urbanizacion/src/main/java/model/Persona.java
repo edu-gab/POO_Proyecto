@@ -4,7 +4,6 @@
  */
 package model;
 
-import com.mycompany.urbanizacion.Urbanizacion;
 
 /**
  *

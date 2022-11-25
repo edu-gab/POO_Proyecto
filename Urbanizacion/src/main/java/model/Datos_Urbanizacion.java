@@ -4,6 +4,9 @@
  */
 package model;
 
+import static com.mycompany.urbanizacion.Urbanizacion.ciudadela;
+import java.util.Scanner;
+
 
 /**
  *
@@ -16,6 +19,8 @@ public class Datos_Urbanizacion{
     private String direccion;
     private String constructora;
     private String persona_responsable;
+    
+    Scanner sc = new Scanner(System.in);
 
     public String getNombre_urba() {
         return nombre_urba;
@@ -74,8 +79,28 @@ public class Datos_Urbanizacion{
         this.persona_responsable = persona_responsable;
     }    
     
+    /**
+     * Metodo que modifica la informacion de la urbanizacion, como solo es 1; se especifica en que posicion para que sobreescriba una clase
+     */
     public void modificar_info(){
         System.out.println("Digite la nueva informacion de la urbanizacion: ");
+        
+        System.out.print("\nNombre de la Urbanizacion: ");
+        this.nombre_urba = sc.next();
+        System.out.print("Nombre de la etapa: ");
+        this.etapa = sc.next();
+        System.out.print("Email del administrador: ");
+        this.email_admin = sc.next();
+        System.out.print("Direccion de la Urbanizacion: ");
+        this.direccion = sc.next();
+        System.out.print("Nombre de la constructora: ");
+        this.constructora = sc.next();
+        System.out.print("Nombre de la personas responsable: ");
+        this.persona_responsable = sc.next();
+        
+        
+        ciudadela.set(0, new Datos_Urbanizacion(nombre_urba, etapa, email_admin, direccion, constructora, persona_responsable));
+        
     }
 
     @Override

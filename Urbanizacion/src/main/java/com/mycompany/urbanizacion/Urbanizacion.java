@@ -4,20 +4,33 @@
  */
 
 package com.mycompany.urbanizacion;
+import java.util.ArrayList;
 import java.util.Scanner;
+import model.Colaboradores;
 import model.Datos_Urbanizacion;
+import model.Estado;
+import model.Residente;
+import model.Tipo_Empleado;
+import model.Visitante;
 /**
  *
  * @author Eduardo
  */
 public class Urbanizacion {
+    
+    public static ArrayList<Datos_Urbanizacion> ciudadela;
+    public static ArrayList<Residente> residentes;
+    public static ArrayList<Visitante> visitantes;
+    public static ArrayList<Colaboradores> colaboradores;
+    
 
+    //Llamada de funcion para que se creen los objetos
     public static void main(String[] args) {
+        
+        inicializarSistema();
         
         int opcion;
         String eleccion;
-        
-        Datos_Urbanizacion ciudadela = new Datos_Urbanizacion("Metropolis 2", "2-C", "edu-gabriel@hotmail.com", "Aut. Terminal terrestre", "Constructor_1", "Alejandro Samuel Sanchez Cabezas");
         
         Scanner entrada = new Scanner(System.in);
         
@@ -41,12 +54,17 @@ public class Urbanizacion {
             switch(opcion){
                 case 1:
                     
-                    System.out.println(ciudadela.toString());
-                    System.out.println("¿Desea modificar los datos de la urbanizacion? y/n");
+                    System.out.println("\n" + ciudadela.get(0).toString());
+                    System.out.println("\n¿Desea modificar los datos de la urbanizacion? y/n");
                     System.out.print("");
                     eleccion = entrada.next();
                     
+                    if(eleccion.equals("y")){
+                        ciudadela.get(0).modificar_info();
+                    }
+                    
                     break;
+                    
                 case 2:
                     System.out.println("2");
                     break;
@@ -70,5 +88,30 @@ public class Urbanizacion {
             }
         } while(opcion != 8);
         
+    }
+    
+    //Metodo que crea los primeros objetos que pide el proyectp
+    public static void inicializarSistema(){
+        ciudadela = new ArrayList<>();
+        residentes = new ArrayList<>();
+        visitantes = new ArrayList<>();
+        colaboradores = new ArrayList<>();
+        
+        Datos_Urbanizacion ciudadela1 = new Datos_Urbanizacion("Metropolis 2", "2-C", "edu-gabriel@hotmail.com", "Aut. Terminal Terrestre", "Contructora_1", "Samuel Alejandro Sanchez Cabezas");
+//        
+//        Residente residente1 = new Residente("0941656548", "Eduardo Sanchez", "0987042324", "edu-gabriel@hotmail.com", Estado.Activo, 919, 13, 1, "2-C");
+//        
+        Visitante visitante1 = new Visitante("0702788472", "Jazmin Sanchez", "0984213239", "alejazmin@outlook.com", "Ninguna");
+        Visitante visitante2 = new Visitante("0915421787", "Jorge Solorzano", "0989991111", "jsolorz@gmail.com", "Uber", "Ninguna");
+//        
+//        Colaboradores colaborador1 = new Colaboradores("09123453101", "Alvaro Vega", "0981234321", "alvarov@outlook.com", Estado.Activo, "Empleado", Tipo_Empleado.Guardia, "21/11/22", "24/11/22");
+//        Colaboradores colaborador2 = new Colaboradores("09567283921", "William Gonzales", "0981234789", "williamg@gmail.com", Estado.Activo, "Empleado", Tipo_Empleado.Guardia, "21/11/22", "24/11/22");
+//        
+        ciudadela.add(ciudadela1);
+//        residentes.add(residente1);
+        visitantes.add(visitante1);
+        visitantes.add(visitante2);
+//        colaboradores.add(colaborador1);
+//        colaboradores.add(colaborador2);
     }
 }

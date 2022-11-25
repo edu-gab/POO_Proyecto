@@ -54,7 +54,11 @@ public class Residente extends Persona{
         this.cantidad_persona = cantidad_persona;
         this.urbanizacion = urbanizacion;
     }
-    
-    
-    
+
+//    @Override
+//    public String toString() {
+//        return super.toString() + "mz=" + mz + ", villa=" + villa + ", cantidad_persona=" + cantidad_persona + ", urbanizacion=" + urbanizacion + '}';
+//    }
+
+       
 }
