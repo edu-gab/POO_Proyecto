@@ -9,5 +9,5 @@ package model;
  * @author Eduardo
  */
 public enum Tipo_Empleado {
-    Guardia, Administrador, Jardinero
+    GUARDIA, ADMINISTRADOR, JARDINERO
 }

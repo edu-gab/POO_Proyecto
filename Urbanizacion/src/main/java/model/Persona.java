@@ -5,6 +5,7 @@
 package model;
 
 
+
 /**
  *
  * @author Eduardo
@@ -68,11 +69,18 @@ public class Persona{
         this.estado_persona = estado_persona;
     }
 
+    @Override
+    public String toString() {
+        return "cedula=" + cedula + ", nombre=" + nombre + ", telefono=" + telefono + ", email=" + email + ", estado_persona=" + estado_persona + ", ";
+    }
+      
+
     public Persona(String cedula, String nombre, String telefono, String email) {
         this.cedula = cedula;
         this.nombre = nombre;
         this.telefono = telefono;
         this.email = email;
     }
+    
     
 }

@@ -83,20 +83,21 @@ public class Datos_Urbanizacion{
      * Metodo que modifica la informacion de la urbanizacion, como solo es 1; se especifica en que posicion para que sobreescriba una clase
      */
     public void modificar_info(){
-        System.out.println("Digite la nueva informacion de la urbanizacion: ");
+        System.out.println("Digite la nueva informacion de la urbanizacion");
         
         System.out.print("\nNombre de la Urbanizacion: ");
-        this.nombre_urba = sc.next();
+        this.nombre_urba = sc.nextLine();
         System.out.print("Nombre de la etapa: ");
-        this.etapa = sc.next();
+        this.etapa = sc.nextLine();
         System.out.print("Email del administrador: ");
-        this.email_admin = sc.next();
+        this.email_admin = sc.nextLine();
         System.out.print("Direccion de la Urbanizacion: ");
-        this.direccion = sc.next();
+        this.direccion = sc.nextLine();
         System.out.print("Nombre de la constructora: ");
-        this.constructora = sc.next();
+        this.constructora = sc.nextLine();
         System.out.print("Nombre de la personas responsable: ");
-        this.persona_responsable = sc.next();
+        this.persona_responsable = sc.nextLine();
+        sc.nextLine();
         
         
         ciudadela.set(0, new Datos_Urbanizacion(nombre_urba, etapa, email_admin, direccion, constructora, persona_responsable));

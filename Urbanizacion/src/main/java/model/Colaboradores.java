@@ -50,11 +50,16 @@ public class Colaboradores extends Persona{
     public Colaboradores(String cedula, String nombre, String telefono, String email, Estado estado_persona, String puesto_trabajo, Tipo_Empleado tipo_empleado, String fecha_inicio, String fecha_fin) {
         super(cedula, nombre, telefono, email, estado_persona);
         this.puesto_trabajo = puesto_trabajo;
-        this.estado = estado;
         this.tipo_empleado = tipo_empleado;
         this.fecha_inicio = fecha_inicio;
         this.fecha_fin = fecha_fin;
     }
+
+    @Override
+    public String toString() {
+        return super.toString() + "puesto_trabajo=" + puesto_trabajo + ", tipo_empleado=" + tipo_empleado + ", fecha_inicio=" + fecha_inicio + ", fecha_fin=" + fecha_fin;
+    }
+    
     
     
 }
