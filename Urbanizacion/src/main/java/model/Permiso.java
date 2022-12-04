@@ -5,6 +5,7 @@
 package model;
 //import static com.mycompany.urbanizacion.Urbanizacion.Permiso;
 
+import static com.mycompany.urbanizacion.Urbanizacion.permiso;
 import java.awt.JobAttributes;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -16,6 +17,7 @@ import java.util.Calendar;
  *
  */
 public class Permisos {
+   
 
     static Calendar Hora = Calendar.getInstance();
     static Calendar Fecha = Calendar.getInstance();
@@ -113,9 +115,37 @@ public class Permisos {
         Scanner info = new Scanner(System.in);
         String cedula_info, ingreso_info, fecha_ingreso;
         int duracion_info;
+        String vis_cedula, vis_nombre, vis_telefono, vis_email, condicion, vis_empresa, vis_sanciones;
+        int indice;
+        
         System.out.println("Residente Ingrese su numero de Cedula: ");
         cedula_info = info.nextLine();
-        Visitante v = Visitante.agregar_visitante();
+        System.out.print("\nCedula del visitante: ");
+        vis_cedula = info.nextLine();
+        System.out.print("Nombre del visitante: ");
+        vis_nombre = info.nextLine();
+        System.out.print("Telefono del visitante: ");
+        vis_telefono = info.nextLine();
+        System.out.print("Email del visitante: ");
+        vis_email = info.nextLine();
+        vis_sanciones = "Ninguna";
+
+        System.out.println("¿Viene de parte de una empresa? y/n");
+        condicion = info.nextLine();
+        if(condicion.equals("y")){
+            System.out.print("\nEmpresa del visitante: ");
+            vis_empresa = info.nextLine();
+            Visitante per = new Visitante(vis_cedula, vis_nombre, vis_telefono, vis_email, vis_empresa, vis_sanciones);
+            permiso.add(per);
+            
+        }       
+        else{
+            Visitante per = new Visitante(vis_cedula, vis_nombre, vis_telefono, vis_email, vis_sanciones);
+            permiso.add(per);
+            
+            
+        }
+        
         System.out.println("Ingrese que va ingresar: ");
         ingreso_info = info.nextLine();
         System.out.println("Que día va a ingresar (dd/mm/aaaa): ");
@@ -125,11 +155,11 @@ public class Permisos {
         //if (fecha_ingreso == fecha) {
             System.out.println("*****************************************");
             System.out.print("El numero de cedula del residente es "+ cedula_info);
-            System.out.println("El numero de cedula del visistante es "+v.getCedula());
-            System.out.println("El nombre del visistante es "+v.getNombre());
-            System.out.println("El email del visistante es "+v.getEmail());
-            System.out.println("El nombre de telefono del visistante es "+v.getTelefono());
-            System.out.println("sanciones del visistante es "+v.getSanciones());
+            System.out.println("El numero de cedula del visistante es "+vis_cedula);
+            System.out.println("El nombre del visistante es "+vis_nombre);
+            System.out.println("El email del visistante es "+vis_email);
+            System.out.println("El nombre de telefono del visistante es "+vis_telefono);
+            System.out.println("sanciones del visistante es "+vis_sanciones);
             
             
             
@@ -157,15 +187,15 @@ public class Permisos {
     //Metodo para eliminar permiso
     public static void eliminar_permiso(){
         int codigo; 
+        String Estado_permiso;
         Scanner eliminar_res= new Scanner(System.in);
-        for (Permisos p: Permisos )/*Help*/{
-            System.out.println("\n" +p.toString());
+        for (Visitante per: permiso ){
+            System.out.println("\n" +per.toString());
         }
          System.err.println("\n Digite el codido que quieras eliminar: ");
          System.err.print("");
          codigo= eliminar_res.nextInt();
-         //permiso.get(indice -1).setEstado_permiso(Estado.ELIMINADO);
-        
-        
-        // metodo de consultat 
+         permiso.get(codigo -1).setEstado_permiso(Estado.ELIMINADO);
     }
+    //metodo para consultar+  
+}
