@@ -165,4 +165,7 @@ public class Permisos {
          System.err.print("");
          codigo= eliminar_res.nextInt();
          //permiso.get(indice -1).setEstado_permiso(Estado.ELIMINADO);
+        
+        
+        // metodo de consultat 
     }
