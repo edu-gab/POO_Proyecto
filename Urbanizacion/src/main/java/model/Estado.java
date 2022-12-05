@@ -9,5 +9,5 @@ package model;
  * @author Eduardo
  */
 public enum Estado {
-    ACTIVO, INACTIVO, CADUCADO, USADO, ELIMINADO
+    ACTIVO, INACTIVO, CADUCADO, USADO,  ELIMINADO
 }
