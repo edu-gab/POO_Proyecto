@@ -21,6 +21,7 @@ public class Urbanizacion {
     public static ArrayList<Datos_Urbanizacion> ciudadela;
     public static ArrayList<Residente> residentes;
     public static ArrayList<Visitante> visitantes;
+    public static ArrayList<Visitante> permiso;
     public static ArrayList<Colaboradores> colaboradores;
     
 
@@ -126,13 +127,41 @@ public class Urbanizacion {
                     
                     break;
                 case 5:
-                    System.out.println("5");
+                    int opc1 = 0;
+                    for (Visitante per : permiso){
+                        System.err.println("\n){"+ per.toString());
+                    }
+                    do {
+                        System.out.println("\n1. Crear Permiso de entrada");
+                        System.out.println("2. Eliminar Permiso de entrada");
+                        System.out.println("3. Consultar permiso de entrada por Mnz. y villa");
+                        System.out.println("4. Salir");
+
+                        System.out.println("\nDigite la opcion");
+                        opc1 = entrada.nextInt();
+                        switch (opc1) {
+                            case 1:
+                                
+                                Permisos.Informa();
+                                System.out.println("n");
+                                break;
+                            case 2:
+                                Permisos.eliminar_permiso();
+                                break;
+                            case 3:
+                                
+
+                                break;
+
+                        }
+                    } while (opc1 != 4);
                     break;
+
                 case 6:
-                    System.out.println("6");
+                    Revision_Entrada.Ingreso();
                     break;
                 case 7:
-                    System.out.println("7");
+                    Reporte.immprimir();
                     break;
                 case 8:
                     break;                 
@@ -146,6 +175,7 @@ public class Urbanizacion {
         ciudadela = new ArrayList<>();
         residentes = new ArrayList<>();
         visitantes = new ArrayList<>();
+        permiso = new ArrayList<>();
         colaboradores = new ArrayList<>();
         
         Datos_Urbanizacion ciudadela1 = new Datos_Urbanizacion("Metropolis 2", "2-C", "edu-gabriel@hotmail.com", "Aut. Terminal Terrestre", "Contructora_1", "Samuel Alejandro Sanchez Cabezas");
